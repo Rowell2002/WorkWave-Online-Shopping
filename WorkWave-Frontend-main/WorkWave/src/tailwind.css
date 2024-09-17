@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for navbar and hover effects */
+.magnet-effect {
+  @apply relative transition-transform duration-300 ease-in-out;
+}
+
+.magnet-effect:hover {
+  @apply scale-110;
+}
+
+.magnet-effect::before {
+  @apply absolute bg-gradient-to-r from-gold-500 to-gold-600;
+  content: '';
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.magnet-effect:hover::before {
+  transform: scaleX(1);
+}
